@@ -1,9 +1,15 @@
-define(['jquery', 'nprogress', 'jqueryCookie'], function ($, nprogress, undefined) {
+define(['jquery', 'jqueryCookie'], function ($, nprogress, undefined) {
+    //ajax请求loading
+    $(document).ajaxStart(function () {
+        $('.overlay').show();
+    }).ajaxStop(function () {
+        $('.overlay').hide();
+    })
+    
 
-    nprogress.start();
 
-    nprogress.done();
 
+    //左侧栏下拉列表
     $('.navs ul').prev('a').on('click', function () {
         $(this).next().slideToggle();
     });
@@ -18,6 +24,7 @@ define(['jquery', 'nprogress', 'jqueryCookie'], function ($, nprogress, undefine
         });
 
     });
+
 
 
     var pathname=window.location.pathname;

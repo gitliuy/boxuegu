@@ -8,6 +8,7 @@ requirejs.config({
         nprogress: 'lib/nprogress/nprogress',
         bootstrap: 'lib/bootstrap/js/bootstrap.min',
         echartsMin: 'lib/echarts/echarts.min',
+        template:'lib/artTemplate/template',
 
 
         // 自己写的路径配置
@@ -32,8 +33,8 @@ requirejs.config({
         homeRepass: 'js/home/repass',
         homeSetting: 'js/home/setting',
         //讲师管理
-        teacherAdd: 'js/teach/add',
-        teacherList: 'js/teach/list',
+        teacherAdd: 'js/teacher/add',
+        teacherList: 'js/teacher/list',
 
 
     },
