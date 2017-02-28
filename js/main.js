@@ -45,7 +45,12 @@ requirejs.config({
 });
 
 // 所有的页面都需要这两个js，先加载他们。
-require(['jquery', 'bootstrap', 'nprogress', 'common', 'echartsMin']);
+require(['nprogress'],function (nprogress) {
+    nprogress.start();
+});
+
+
+require(['jquery', 'bootstrap', 'common', 'echartsMin']);
 
 
 /*

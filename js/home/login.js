@@ -1,4 +1,15 @@
-define(['jquery','jqueryCookie'], function($,undefined) {
+define(['jquery','jqueryCookie','nprogress'], function($,undefined,nprogress) {
+
+	var userInfo=null;
+	try{
+		userInfo=JSON.parse($.cookie('userInfo'))
+	}catch (e) {
+		userInfo={};
+	}
+
+	$('.login .avatar img').attr('src',userInfo.tc_avater? userInfo.tc_avater:'/img/default.png')
+
+
 	$('#form-login').on('submit',function () {
         $.ajax({
             url:'/v6/login',
@@ -14,4 +25,5 @@ define(['jquery','jqueryCookie'], function($,undefined) {
         })
 		return false;
     })
+	nprogress.done();
 });

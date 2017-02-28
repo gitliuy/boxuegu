@@ -20,6 +20,11 @@ define(['jquery', 'nprogress', 'jqueryCookie'], function ($, nprogress, undefine
     });
 
 
+    var pathname=window.location.pathname;
+    $('.navs a').removeClass('active').filter('[href="'+pathname+'"]').addClass('active').parents('ul').show();
+
+
+
     var userInfo=null;
     try {
         userInfo=JSON.parse($.cookie('userInfo'))
@@ -29,4 +34,7 @@ define(['jquery', 'nprogress', 'jqueryCookie'], function ($, nprogress, undefine
 
     $('.aside .profile h4').html(userInfo.tc_name?userInfo.tc_name:'dagenimeinga');
     $('.aside .profile img').attr('src',userInfo.tc_avatar?userInfo.tc_avatar:'/img/default.png');
+
+
+
 })
