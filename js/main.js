@@ -35,6 +35,7 @@ requirejs.config({
         //讲师管理
         teacherAdd: 'js/teacher/add',
         teacherList: 'js/teacher/list',
+        index:'js/index',
 
 
     },
@@ -125,6 +126,9 @@ require(['jquery', 'bootstrap', 'common', 'echartsMin']);
                 break;
             case '/html/teacher/list.html':
                 require(['teacherList']);
+                break;
+            case '/':
+                require(['index']);
                 break;
         }
     })

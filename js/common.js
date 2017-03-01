@@ -1,4 +1,5 @@
-define(['jquery', 'jqueryCookie'], function ($, nprogress, undefined) {
+define(['jquery', 'jqueryCookie','nprogress'], function ($, nprogress, undefined) {
+
     //ajax请求loading
     $(document).ajaxStart(function () {
         $('.overlay').show();

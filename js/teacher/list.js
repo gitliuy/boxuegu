@@ -20,6 +20,4 @@ define(['jquery','common','nprogress','template'], function($,undefined,nprogres
             }
         })
     })
-
-
 });
