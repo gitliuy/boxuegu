@@ -9,11 +9,15 @@ requirejs.config({
         bootstrap: 'lib/bootstrap/js/bootstrap.min',
         echartsMin: 'lib/echarts/echarts.min',
         template:'lib/artTemplate/template',
+        datepicker: 'lib/bootstrap-datepicker/js/bootstrap-datepicker',
+        datepickerLanguage: 'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
 
 
         // 自己写的路径配置
-        common: 'js/common',
-        echarts: 'js/echarts',
+
+        common: 'js/common/common',
+        util: 'js/common/util',
+        echarts: 'js/common/echarts',
         //用户信息
         userList: 'js/user/list',
         userProfile: 'js/user/profile',
@@ -42,6 +46,9 @@ requirejs.config({
     shim: {
         bootstrap: {
             deps: ['jquery']
+        },
+        datepickerLanguage: {
+            deps: ['jquery', 'datepicker']
         }
     }
 });
@@ -128,7 +135,7 @@ require(['jquery', 'bootstrap', 'common', 'echartsMin']);
                 require(['teacherList']);
                 break;
             case '/':
-                require(['index']);
+                require(['../index']);
                 break;
         }
     })
